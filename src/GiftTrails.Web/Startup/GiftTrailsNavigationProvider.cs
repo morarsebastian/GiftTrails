@@ -43,6 +43,13 @@ namespace GiftTrails.Web.Startup
                         url: "About",
                         icon: "fa fa-info"
                         )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.Gifts,
+                        L("GiftList"),
+                        url: "Gifts",
+                        icon: "fa fa-gift"
+                        )
                 );
         }
 

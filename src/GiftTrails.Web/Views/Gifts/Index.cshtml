@@ -1,0 +1,27 @@
+@model GiftTrails.Web.Models.Gifts.IndexViewModel
+
+@using GiftTrails.Web.Startup
+
+@{
+    ViewData["Title"] = L("GiftList");
+    ViewBag.CurrentPageName = PageNames.Gifts; //The menu item will be active for this page.
+}
+
+<h2>@L("GiftList")</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@L("Title")</th>
+            <th>@L("Description")</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Gifts) {
+        <tr>
+            <th>@item.Title</th>
+            <th>@item.Description</th>
+        </tr>
+}
+    </tbody>
+</table>
