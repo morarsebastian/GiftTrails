@@ -7,6 +7,7 @@ using GiftTrails.Configuration;
 using GiftTrails.MultiTenancy;
 using GiftTrails.Users;
 using GiftTrails.Web;
+using GiftTrails.Gifts;
 
 namespace GiftTrails.EntityFramework
 {
@@ -14,6 +15,7 @@ namespace GiftTrails.EntityFramework
     public class GiftTrailsDbContext : AbpZeroDbContext<Tenant, Role, User>
     {
         /* Define an IDbSet for each entity of the application */
+        public DbSet<Gift> Gifts { get; set; }
 
         /* Default constructor is needed for EF command line tool. */
         public GiftTrailsDbContext()
