@@ -19,13 +19,14 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Gifts) {
-        <tr>
-            <th>@item.Title</th>
-            <th>@item.Description</th>
-            <th>@item.Trails.Count()</th>
-            <th><a asp-action="Create">Create New</a></th>
-        </tr>
-}
+        @foreach (var item in Model.Gifts)
+        {
+            <tr>
+                <th>@item.Title</th>
+                <th>@item.Description</th>
+                <th>@item.Trails.Count()</th>
+                <th><a class="btn btn-primary btn-sm" asp-action="Index" asp-controller="Trails" asp-route-giftId="@item.Id">@L("ViewTrails")</a> <a class="btn btn-primary btn-sm" asp-action="Create" asp-controller="Trails" asp-route-giftId="@item.Id">@L("AddTrail")</a></th>
+            </tr>
+        }
     </tbody>
 </table>

@@ -18,7 +18,7 @@
                 var input = _$form.serializeFormToObject();
                 abp.services.app.trail.create(input)
                     .done(function() {
-                        location.href = '/Trails';
+                        location.href = '/Trails?giftId=' + input.GiftId;
                     });
             });
     });
