@@ -30,6 +30,8 @@ namespace GiftTrails.Trails
         [Required]
         public decimal Longitude { get; set; }
 
+        public string GooglePlaceId { get; set; }
+
         public DateTime CreationTime { get; set; }
 
         [ForeignKey(nameof(CreatorUserId))]

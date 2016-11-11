@@ -24,6 +24,8 @@ namespace GiftTrails.Trails.Dtos
         [Required]
         public decimal Longitude { get; set; } = 0;
 
+        public string GooglePlaceId { get; set; }
+
         public long CreatorUserId { get; set; }
 
         public int GiftId { get; set; }

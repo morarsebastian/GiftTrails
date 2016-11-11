@@ -251,3 +251,6 @@ paket-files/
 .idea/
 *.sln.iml
 /HelpCmd.txt
+/src/GiftTrails.Web/Properties/PublishProfiles/publish-module.psm1
+/src/GiftTrails.Web/Properties/PublishProfiles/GiftTrailsTest - Web Deploy-publish.ps1
+/src/GiftTrails.Web/Properties/PublishProfiles/GiftTrails - Web Deploy-publish.ps1

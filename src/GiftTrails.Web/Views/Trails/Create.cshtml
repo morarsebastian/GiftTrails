@@ -13,27 +13,31 @@
     <environment names="Staging,Production">
         <script src="~/js/views/trails/create.min.js" asp-append-version="true"></script>
     </environment>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAGxcp9WRY53PuCGxOcYp0bmyNr7JS3tE&libraries=places&callback=initAutocomplete"
+            async defer></script>
 }
+
+@*<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAAGxcp9WRY53PuCGxOcYp0bmyNr7JS3tE"></script>*@
 
 <form id="TrailCreationForm">
     <input type="hidden" name="CreatorUserId" value="@Model.CreatorUserId" />
     <input type="hidden" name="GiftId" value="@Model.GiftId" />
+    <input type="hidden" name="CityName" value="" />
+    <input type="hidden" name="CountryName" value="" />
+    <input type="hidden" name="Latitude" value="" />
+    <input type="hidden" name="Longitude" value="" />
+    <input type="hidden" name="GooglePlaceId" value="" />
 
     <div class="form-horizontal">
         <h4>@L("AddTrailToGiftHeader")</h4>
         <hr />
         <div class="form-group">
-            <label for="CityName" class="col-md-2 control-label">@L("City")</label>
-            <div class="col-md-10">
-                <input type="text" name="CityName" class="form-control" placeholder="@L("CityNamePlaceholder")" required maxlength="@GiftTrails.Trails.Trail.MaxLocationLength" />
+            <label for="Location" class="col-md-2 control-label">@L("YourLocation")</label>
+            <div class="col-md-6">
+                <input id="pac-input" type="text" name="Location" class="form-control" placeholder="@L("LocationPlaceholder")">
             </div>
         </div>
-        <div class="form-group">
-            <label for="CountryName" class="col-md-2 control-label">@L("Country")</label>
-            <div class="col-md-10">
-                <input type="text" name="CountryName" class="form-control" placeholder="@L("CountryNamePlaceholder")" required maxlength="@GiftTrails.Trails.Trail.MaxLocationLength" />
-            </div>
-        </div>
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <button type="submit" class="btn btn-default">@L("Create")</button>
@@ -41,3 +45,8 @@
         </div>
     </div>
 </form>
+
+        <div id="dvMap" style="width: 500px; height: 500px"></div>
+
+
+
