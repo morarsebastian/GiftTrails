@@ -1,6 +1,7 @@
 ﻿using Abp.Domain.Entities;
 using Abp.Domain.Entities.Auditing;
 using Abp.Timing;
+using GiftTrails.Trails;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -24,6 +25,12 @@ namespace GiftTrails.Gifts
         public string Description { get; set; }
 
         public DateTime CreationTime { get; set; }
+
+        [ForeignKey(nameof(CreatorUserId))]
+        public GiftTrails.Users.User CreatorUser { get; set; }
+        public long CreatorUserId { get; set; }
+
+        public virtual IEnumerable<Trail> Trails { get; set; }
 
         public Gift()
         {

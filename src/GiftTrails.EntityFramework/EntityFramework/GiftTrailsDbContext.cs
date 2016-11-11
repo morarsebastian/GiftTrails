@@ -8,6 +8,7 @@ using GiftTrails.MultiTenancy;
 using GiftTrails.Users;
 using GiftTrails.Web;
 using GiftTrails.Gifts;
+using GiftTrails.Trails;
 
 namespace GiftTrails.EntityFramework
 {
@@ -16,6 +17,7 @@ namespace GiftTrails.EntityFramework
     {
         /* Define an IDbSet for each entity of the application */
         public DbSet<Gift> Gifts { get; set; }
+        public DbSet<Trail> Trails { get; set; }
 
         /* Default constructor is needed for EF command line tool. */
         public GiftTrailsDbContext()
@@ -49,6 +51,14 @@ namespace GiftTrails.EntityFramework
             : base(dbConnection, true)
         {
 
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Trail>().Property(a => a.Latitude).HasPrecision(18, 9);
+            modelBuilder.Entity<Trail>().Property(a => a.Longitude).HasPrecision(18, 9);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 
