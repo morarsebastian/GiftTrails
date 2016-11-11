@@ -1,0 +1,27 @@
+@model GiftTrails.Web.Models.Trails.IndexViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>@L("City")</th>
+            <th>@L("Country")</th>
+            <th>@L("GiftId")</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Trails) {
+        <tr>
+            <td>@item.CityName</td>
+            <td>@item.CountryName</td>
+            <td>@item.GiftId</td>
+        </tr>
+}
+    </tbody>
+</table>

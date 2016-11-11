@@ -1,0 +1,43 @@
+@model GiftTrails.Web.Models.Trails.CreateTrailViewModel
+
+@{
+    ViewData["Title"] = L("AddTrail");
+}
+
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/js/views/trails/create.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/js/views/trails/create.min.js" asp-append-version="true"></script>
+    </environment>
+}
+
+<form id="TrailCreationForm">
+    <input type="hidden" name="CreatorUserId" value="@Model.CreatorUserId" />
+    <input type="hidden" name="GiftId" value="@Model.GiftId" />
+
+    <div class="form-horizontal">
+        <h4>@L("AddTrailToGiftHeader")</h4>
+        <hr />
+        <div class="form-group">
+            <label for="CityName" class="col-md-2 control-label">@L("City")</label>
+            <div class="col-md-10">
+                <input type="text" name="CityName" class="form-control" placeholder="@L("CityNamePlaceholder")" required maxlength="@GiftTrails.Trails.Trail.MaxLocationLength" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="CountryName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input type="text" name="CountryName" class="form-control" placeholder="@L("CountryNamePlaceholder")" required maxlength="@GiftTrails.Trails.Trail.MaxLocationLength" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default">@L("Create")</button>
+            </div>
+        </div>
+    </div>
+</form>

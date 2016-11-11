@@ -11,5 +11,6 @@ namespace GiftTrails.Trails
     public interface ITrailAppService : IApplicationService
     {
         Task<ListResultDto<TrailListDto>> GetAll(GetAllTrailsInput input);
+        Task Create(CreateTrailInput input);
     }
 }

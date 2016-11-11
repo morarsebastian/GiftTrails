@@ -15,6 +15,7 @@
             <th>@L("Title")</th>
             <th>@L("Description")</th>
             <th>@L("Trails No")</th>
+            <th>@L("AddTrail")</th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +24,7 @@
             <th>@item.Title</th>
             <th>@item.Description</th>
             <th>@item.Trails.Count()</th>
+            <th><a asp-action="Create">Create New</a></th>
         </tr>
 }
     </tbody>

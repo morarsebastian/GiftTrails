@@ -28,5 +28,11 @@ namespace GiftTrails.Trails
 
             return new ListResultDto<TrailListDto>(ObjectMapper.Map<List<TrailListDto>>(trails));
         }
+
+        public async Task Create(CreateTrailInput input)
+        {
+            var trail = ObjectMapper.Map<Trail>(input);
+            await _trailRepository.InsertAsync(trail);
+        }
     }
 }

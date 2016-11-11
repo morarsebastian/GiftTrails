@@ -69,5 +69,11 @@
     "inputFiles": [
       "wwwroot/view-resources/Views/Tenants/Index.js"
     ]
+  },
+  {
+    "outputFileName": "wwwroot/js/views/trails/create.min.js",
+    "inputFiles": [
+      "wwwroot/js/views/trails/create.js"
+    ]
   }
 ]
