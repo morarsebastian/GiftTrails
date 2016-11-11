@@ -1,6 +1,7 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.Domain.Entities.Auditing;
+using GiftTrails.Trails.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,7 @@ namespace GiftTrails.Gifts.Dtos
         public string Description { get; set; }
 
         public DateTime CreationTime { get; set; }
+
+        public List<TrailListDto> Trails { get; set; }
     }
 }

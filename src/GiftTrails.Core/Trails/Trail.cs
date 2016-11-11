@@ -45,5 +45,10 @@ namespace GiftTrails.Trails
             CreationTime = Clock.Now;
             GiftId = giftId;
         }
+
+        public Trail()
+        {
+            CreationTime = Clock.Now;
+        }
     }
 }

@@ -26,10 +26,6 @@ namespace GiftTrails.Gifts
 
         public DateTime CreationTime { get; set; }
 
-        [ForeignKey(nameof(CreatorUserId))]
-        public GiftTrails.Users.User CreatorUser { get; set; }
-        public long CreatorUserId { get; set; }
-
         public virtual IEnumerable<Trail> Trails { get; set; }
 
         public Gift()
